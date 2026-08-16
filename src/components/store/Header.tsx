@@ -31,20 +31,21 @@ export function Header() {
             </Link>
             <Link
               to="/shop/$category"
-              params={{ category: "women" }}
+              params={{ category: "gold" }}
               className={linkBase}
               activeProps={{ className: "text-foreground" }}
             >
-              Women
+              Gold
             </Link>
             <Link
               to="/shop/$category"
-              params={{ category: "men" }}
+              params={{ category: "silver" }}
               className={linkBase}
               activeProps={{ className: "text-foreground" }}
             >
-              Men
+              Silver
             </Link>
+
           </nav>
         </div>
 

@@ -54,7 +54,7 @@ export function HeroSlider() {
                   active ? "scale-105" : "scale-100"
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/10 sm:to-transparent" />
               <div className="absolute inset-0 flex items-center">
                 <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
                   <div
