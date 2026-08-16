@@ -1,35 +1,31 @@
 /**
- * MOCK STOREFRONT DATA
+ * MOCK STOREFRONT DATA — BRACELETS
  * ---------------------------------------------------------------
  * Single source of truth for the prototype. Edit freely — the whole
  * site (home, shop, category pages, product pages) is generated from
- * the arrays below. Swapping this file for API calls later requires no
- * component changes as long as the shapes stay the same.
+ * the arrays below.
  */
 
-import heroImg from "@/assets/hero.jpg";
-import catWomen from "@/assets/cat-women.jpg";
-import catMen from "@/assets/cat-men.jpg";
-import catAccessories from "@/assets/cat-accessories.jpg";
-import catFootwear from "@/assets/cat-footwear.jpg";
-import pKnit from "@/assets/p-knit.jpg";
-import pTrench from "@/assets/p-trench.jpg";
-import pLinen from "@/assets/p-linen.jpg";
-import pDenim from "@/assets/p-denim.jpg";
-import pSlip from "@/assets/p-slip.jpg";
-import pScarf from "@/assets/p-scarf.jpg";
-import pBoots from "@/assets/p-boots.jpg";
-import pBlazer from "@/assets/p-blazer.jpg";
+import hero1 from "@/assets/hero-1.jpg";
+import hero2 from "@/assets/hero-2.jpg";
+import hero3 from "@/assets/hero-3.jpg";
+import bGold from "@/assets/b-gold-cuff.jpg";
+import bSilver from "@/assets/b-silver-chain.jpg";
+import bOnyx from "@/assets/b-onyx-bead.jpg";
+import bLeather from "@/assets/b-leather-wrap.jpg";
+import bCharm from "@/assets/b-charm.jpg";
+import bPearl from "@/assets/b-pearl.jpg";
+import bTennis from "@/assets/b-tennis.jpg";
 
 export const store = {
-  name: "Atelier Nord",
-  tagline: "Considered essentials, made to be lived in.",
-  heroImage: heroImg,
+  name: "Lumina Jewelry",
+  tagline: "Handcrafted bracelets, made to be worn every day.",
+  heroImage: hero1,
   /** International format, digits only — used to build wa.me links. */
   whatsappNumber: "923001234567",
   currency: "PKR",
   currencySymbol: "Rs",
-  email: "hello@ateliernord.example",
+  email: "hello@luminajewelry.example",
   phoneDisplay: "+92 300 123 4567",
   address: "Studio 4, Zamzama Boulevard, Karachi",
   socials: [
@@ -39,6 +35,51 @@ export const store = {
     { label: "Pinterest", href: "#" },
   ],
 };
+
+/** Full-bleed posters for the homepage hero slider. */
+export type Slide = {
+  id: string;
+  image: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  ctaLabel: string;
+  ctaTo: string;
+  ctaCategory?: string;
+};
+
+export const heroSlides: Slide[] = [
+  {
+    id: "s1",
+    image: hero1,
+    eyebrow: "New collection",
+    title: "Gold Standard",
+    subtitle: "Stacking cuffs and bangles in 18k gold vermeil — timeless, never loud.",
+    ctaLabel: "Shop gold",
+    ctaTo: "category",
+    ctaCategory: "gold",
+  },
+  {
+    id: "s2",
+    image: hero2,
+    eyebrow: "Everyday icons",
+    title: "Strength in Silver",
+    subtitle: "Solid sterling chains, finished by hand and built to outlast trends.",
+    ctaLabel: "Shop silver",
+    ctaTo: "category",
+    ctaCategory: "silver",
+  },
+  {
+    id: "s3",
+    image: hero3,
+    eyebrow: "Natural stone",
+    title: "Beauty in Every Stone",
+    subtitle: "Onyx, howlite and pearl beads strung on durable elastic cord.",
+    ctaLabel: "Shop beaded",
+    ctaTo: "category",
+    ctaCategory: "beaded",
+  },
+];
 
 export type Category = {
   id: string;
@@ -68,220 +109,226 @@ export type Product = {
 export const categories: Category[] = [
   {
     id: "c1",
-    slug: "women",
-    name: "Women",
-    description: "Fluid silhouettes in silk, linen and fine wool.",
-    image: catWomen,
+    slug: "gold",
+    name: "Gold",
+    description: "18k gold vermeil cuffs, bangles and chains.",
+    image: bGold,
   },
   {
     id: "c2",
-    slug: "men",
-    name: "Men",
-    description: "Relaxed tailoring and everyday layers.",
-    image: catMen,
+    slug: "silver",
+    name: "Silver",
+    description: "Solid 925 sterling links and rope chains.",
+    image: bSilver,
   },
   {
     id: "c3",
-    slug: "outerwear",
-    name: "Outerwear",
-    description: "Coats and jackets built for long seasons.",
-    image: pTrench,
+    slug: "beaded",
+    name: "Beaded",
+    description: "Natural stone beads on durable cord.",
+    image: bOnyx,
   },
   {
     id: "c4",
-    slug: "footwear",
-    name: "Footwear",
-    description: "Hand-finished leather, quietly constructed.",
-    image: catFootwear,
+    slug: "leather",
+    name: "Leather",
+    description: "Braided leather with steel hardware.",
+    image: bLeather,
   },
   {
     id: "c5",
-    slug: "accessories",
-    name: "Accessories",
-    description: "Bags, scarves and small leather goods.",
-    image: catAccessories,
+    slug: "charms",
+    name: "Charms",
+    description: "Build-your-own charm bracelets and pendants.",
+    image: bCharm,
   },
 ];
+
+const SIZES = ['6.5"', '7"', '7.5"', '8"'];
 
 export const products: Product[] = [
   {
     id: "p1",
-    slug: "silk-wrap-midi-dress",
-    name: "Silk Wrap Midi Dress",
-    categorySlug: "women",
+    slug: "eterna-gold-bangle",
+    name: "Eterna Gold Bangle",
+    categorySlug: "gold",
     description:
-      "A weightless wrap dress cut from washed sand-toned silk. The bias skirt falls into a soft column, while the self-tie waist lets you set the fit exactly where you want it.",
-    details: ["100% mulberry silk", "Bias-cut skirt", "Self-tie waist", "Dry clean only"],
-    price: 18500,
-    salePrice: 14800,
-    stock: 12,
+      "A perfectly round bangle in 18k gold vermeil over solid brass. Slim enough to stack, weighty enough to feel like heirloom jewellery.",
+    details: ["18k gold vermeil", "2.5mm profile", "Slip-on fit", "Tarnish resistant"],
+    price: 6800,
+    salePrice: 5400,
+    stock: 24,
     featured: true,
-    images: [catWomen, pSlip, pScarf],
-    sizes: ["XS", "S", "M", "L"],
-    colors: ["Sand", "Ivory", "Black"],
+    images: [bGold, bTennis],
+    sizes: SIZES,
+    colors: ["Yellow Gold", "Rose Gold"],
   },
   {
     id: "p2",
-    slug: "black-silk-slip-dress",
-    name: "Bias Silk Slip Dress",
-    categorySlug: "women",
+    slug: "solene-gold-cuff",
+    name: "Solene Open Cuff",
+    categorySlug: "gold",
     description:
-      "The evening staple: a fine-strap slip in matte black silk with a discreet side slit and a clean, unlined finish.",
-    details: ["Matte silk crepe", "Side slit", "Adjustable straps"],
-    price: 16200,
-    stock: 4,
+      "An open cuff that slides on with a gentle flex, polished to a mirror finish so it catches light from every angle.",
+    details: ["18k gold vermeil", "Adjustable open cuff", "High polish finish"],
+    price: 8900,
+    stock: 5,
     featured: true,
-    images: [pSlip, catWomen],
-    sizes: ["XS", "S", "M", "L"],
-    colors: ["Black", "Espresso"],
+    images: [bGold, bSilver],
+    sizes: ["One size"],
+    colors: ["Yellow Gold"],
   },
   {
     id: "p3",
-    slug: "ribbed-wool-sweater",
-    name: "Ribbed Wool Sweater",
-    categorySlug: "women",
+    slug: "lumina-tennis-bracelet",
+    name: "Lumina Tennis Bracelet",
+    categorySlug: "gold",
     description:
-      "Chunky rib knit in undyed lambswool with dropped shoulders and a rounded neckline. Warm without weight.",
-    details: ["Undyed lambswool", "Dropped shoulder", "Ribbed cuffs and hem"],
-    price: 11900,
-    salePrice: 8900,
-    stock: 23,
+      "A full line of brilliant-cut cubic zirconia set in four-prong gold settings — the evening piece that works with everything.",
+    details: ["Brilliant-cut CZ", "Gold vermeil settings", "Double safety clasp"],
+    price: 14900,
+    salePrice: 11900,
+    stock: 8,
     featured: true,
-    images: [pKnit, catWomen],
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Oatmeal", "Fog"],
+    images: [bTennis, bGold],
+    sizes: SIZES,
+    colors: ["Gold", "Silver"],
   },
   {
     id: "p4",
-    slug: "relaxed-linen-shirt",
-    name: "Relaxed Linen Shirt",
-    categorySlug: "men",
+    slug: "atlas-curb-chain",
+    name: "Atlas Curb Chain",
+    categorySlug: "silver",
     description:
-      "Cut generously from garment-washed European linen, with a soft collar that sits well open or buttoned.",
-    details: ["100% European linen", "Garment washed", "Mother-of-pearl buttons"],
-    price: 9800,
-    stock: 31,
+      "A substantial 7mm curb chain in solid 925 sterling silver with a hand-set box clasp. Unisex, and quietly heavy on the wrist.",
+    details: ["Solid 925 sterling", "7mm curb links", "Box clasp with safety catch"],
+    price: 9600,
+    stock: 17,
     featured: true,
-    images: [pLinen, catMen],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Optic White", "Clay", "Sage"],
+    images: [bSilver, bLeather],
+    sizes: SIZES,
+    colors: ["Polished", "Brushed"],
   },
   {
     id: "p5",
-    slug: "wool-overshirt",
-    name: "Wool Overshirt",
-    categorySlug: "men",
+    slug: "rope-twist-silver",
+    name: "Rope Twist Bracelet",
+    categorySlug: "silver",
     description:
-      "A midweight overshirt in brushed navy wool — the layer that works over a tee and under a coat.",
-    details: ["Brushed wool blend", "Chest pocket", "Boxy fit"],
-    price: 15400,
-    salePrice: 12300,
-    stock: 7,
-    images: [catMen, pBlazer],
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Navy", "Charcoal"],
+      "Twisted sterling strands form a rope that moves like fabric and reflects like metal.",
+    details: ["925 sterling silver", "5mm rope weave", "Magnetic clasp"],
+    price: 7400,
+    salePrice: 5900,
+    stock: 3,
+    images: [bSilver, bCharm],
+    sizes: SIZES,
+    colors: ["Silver"],
   },
   {
     id: "p6",
-    slug: "straight-leg-denim",
-    name: "Straight Leg Denim",
-    categorySlug: "men",
+    slug: "signet-id-bracelet",
+    name: "Signet ID Bracelet",
+    categorySlug: "silver",
     description:
-      "Rigid Japanese denim in a mid indigo wash, cut straight through the leg with a clean mid rise.",
-    details: ["13.5oz Japanese denim", "Mid rise, straight leg", "Copper hardware"],
-    price: 12600,
+      "A flat engravable ID plate joined to a heavy curb chain — add initials or a date at checkout over WhatsApp.",
+    details: ["925 sterling", "Engravable plate", "Free hand engraving"],
+    price: 11200,
     stock: 0,
-    images: [pDenim, catMen],
-    sizes: ["28", "30", "32", "34", "36"],
-    colors: ["Mid Indigo", "Washed Black"],
+    images: [bSilver, bTennis],
+    sizes: SIZES,
+    colors: ["Silver"],
   },
   {
     id: "p7",
-    slug: "camel-trench-coat",
-    name: "Camel Trench Coat",
-    categorySlug: "outerwear",
+    slug: "onyx-bead-bracelet",
+    name: "Black Onyx Bead Bracelet",
+    categorySlug: "beaded",
     description:
-      "A double-breasted trench in water-resistant cotton gabardine with belted cuffs and a full storm shield.",
-    details: ["Cotton gabardine", "Double breasted", "Belted cuffs", "Removable waist belt"],
-    price: 32900,
-    salePrice: 24900,
-    stock: 5,
+      "Grade-A black onyx rounds, hand-strung on double elastic cord with a single sterling accent bead.",
+    details: ["8mm black onyx", "Double elastic cord", "Sterling accent bead"],
+    price: 3900,
+    salePrice: 2900,
+    stock: 42,
     featured: true,
-    images: [pTrench, catWomen],
-    sizes: ["XS", "S", "M", "L"],
-    colors: ["Camel", "Stone"],
+    images: [bOnyx, bPearl],
+    sizes: SIZES,
+    colors: ["Onyx", "Matte Onyx"],
   },
   {
     id: "p8",
-    slug: "tailored-wool-blazer",
-    name: "Tailored Wool Blazer",
-    categorySlug: "outerwear",
+    slug: "freshwater-pearl-bracelet",
+    name: "Freshwater Pearl Bracelet",
+    categorySlug: "beaded",
     description:
-      "Single-button tailoring in a dry charcoal wool. Lightly structured shoulder, softly roped sleeve head.",
-    details: ["Virgin wool", "Half-canvassed", "Single button", "Two flap pockets"],
-    price: 27500,
-    stock: 9,
-    images: [pBlazer, catMen],
-    sizes: ["36", "38", "40", "42", "44"],
-    colors: ["Charcoal", "Ink"],
+      "Lustrous freshwater pearls spaced with tiny gold beads — soft, bridal, and easy to wear with a t-shirt.",
+    details: ["7-8mm freshwater pearls", "Gold-filled spacers", "Hand knotted"],
+    price: 6400,
+    stock: 11,
+    featured: true,
+    images: [bPearl, bOnyx],
+    sizes: SIZES,
+    colors: ["White", "Peach"],
   },
   {
     id: "p9",
-    slug: "leather-low-top-sneaker",
-    name: "Leather Low-Top Sneaker",
-    categorySlug: "footwear",
+    slug: "howlite-stone-stack",
+    name: "Howlite Stone Stack",
+    categorySlug: "beaded",
     description:
-      "Minimal low-top in full-grain white leather over a vulcanised cream sole. Unlined, so it softens with wear.",
-    details: ["Full-grain leather", "Vulcanised rubber sole", "Made in Portugal"],
-    price: 17400,
-    salePrice: 13900,
-    stock: 18,
-    featured: true,
-    images: [catFootwear, pBoots],
-    sizes: ["39", "40", "41", "42", "43", "44"],
-    colors: ["Optic White", "Bone"],
+      "A three-piece stack of white howlite, rose quartz and amethyst rounds. Wear together or split them up.",
+    details: ["Set of three", "8mm natural stone", "Stretch fit"],
+    price: 8200,
+    salePrice: 6500,
+    stock: 4,
+    images: [bOnyx, bPearl],
+    sizes: SIZES,
+    colors: ["Mixed stone"],
   },
   {
     id: "p10",
-    slug: "leather-ankle-boot",
-    name: "Leather Ankle Boot",
-    categorySlug: "footwear",
+    slug: "braided-leather-wrap",
+    name: "Braided Leather Wrap",
+    categorySlug: "leather",
     description:
-      "A clean-lined ankle boot on a low stacked heel, with an inside zip and a leather-lined footbed.",
-    details: ["Polished calf leather", "35mm stacked heel", "Inside zip"],
-    price: 22800,
-    stock: 3,
-    images: [pBoots, catFootwear],
-    sizes: ["36", "37", "38", "39", "40", "41"],
-    colors: ["Black", "Dark Tan"],
+      "Double-wrap braided leather with a brushed steel magnetic clasp that snaps shut one-handed.",
+    details: ["Full-grain braided leather", "Brushed steel clasp", "Water resistant"],
+    price: 4900,
+    stock: 26,
+    featured: true,
+    images: [bLeather, bSilver],
+    sizes: SIZES,
+    colors: ["Black", "Tan", "Espresso"],
   },
   {
     id: "p11",
-    slug: "structured-leather-tote",
-    name: "Structured Leather Tote",
-    categorySlug: "accessories",
+    slug: "mariner-leather-cord",
+    name: "Mariner Leather Cord",
+    categorySlug: "leather",
     description:
-      "A hand-finished tote in vegetable-tanned tan leather, roomy enough for a laptop and quiet enough for anything.",
-    details: ["Vegetable-tanned leather", "Suede lining", "Fits 14\" laptop"],
-    price: 24900,
-    salePrice: 19900,
-    stock: 6,
-    featured: true,
-    images: [catAccessories, pScarf],
-    colors: ["Tan", "Black"],
+      "A single 4mm leather cord with a knotted sterling loop — the most minimal thing we make.",
+    details: ["4mm round leather", "Sterling loop", "Adjustable slide knot"],
+    price: 3200,
+    salePrice: 2400,
+    stock: 2,
+    images: [bLeather, bCharm],
+    sizes: ["Adjustable"],
+    colors: ["Black", "Chestnut"],
   },
   {
     id: "p12",
-    slug: "cashmere-scarf",
-    name: "Cashmere Scarf",
-    categorySlug: "accessories",
+    slug: "keepsake-charm-bracelet",
+    name: "Keepsake Charm Bracelet",
+    categorySlug: "charms",
     description:
-      "Featherweight cashmere in dusty rose, woven on a slow loom and finished with a hand-knotted fringe.",
-    details: ["100% cashmere", "Hand-knotted fringe", "180 x 70 cm"],
-    price: 8900,
-    stock: 0,
-    images: [pScarf, catAccessories],
-    colors: ["Dusty Rose", "Camel", "Grey Marl"],
+      "A sterling link bracelet supplied with three charms of your choice — message us and we'll build it with you.",
+    details: ["925 sterling links", "Includes 3 charms", "Add charms any time"],
+    price: 10400,
+    salePrice: 8300,
+    stock: 9,
+    featured: true,
+    images: [bCharm, bSilver],
+    sizes: SIZES,
+    colors: ["Silver", "Gold"],
   },
 ];
 
@@ -306,8 +353,7 @@ export const getCategory = (slug: string) => categories.find((c) => c.slug === s
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 
-export const productsByCategory = (slug: string) =>
-  products.filter((p) => p.categorySlug === slug);
+export const productsByCategory = (slug: string) => products.filter((p) => p.categorySlug === slug);
 
 export const featuredProducts = () => products.filter((p) => p.featured);
 
