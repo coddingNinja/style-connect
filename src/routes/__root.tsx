@@ -80,18 +80,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Atelier Nord — Modern Fashion Essentials" },
+      { title: "Lumina Jewelry — Handcrafted Bracelets" },
       {
         name: "description",
         content:
-          "Considered essentials in silk, linen, wool and leather. Order any piece directly over WhatsApp.",
+          "Gold, sterling silver, beaded, leather and charm bracelets. Order any piece directly over WhatsApp.",
       },
-      { name: "author", content: "Atelier Nord" },
-      { property: "og:title", content: "Atelier Nord — Modern Fashion Essentials" },
+      { name: "author", content: "Lumina Jewelry" },
+      { property: "og:title", content: "Lumina Jewelry — Handcrafted Bracelets" },
       {
         property: "og:description",
         content:
-          "Considered essentials in silk, linen, wool and leather. Order any piece directly over WhatsApp.",
+          "Gold, sterling silver, beaded, leather and charm bracelets. Order any piece directly over WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
