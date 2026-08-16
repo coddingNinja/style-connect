@@ -4,7 +4,7 @@ import { store } from "@/data/store";
 
 const title = `Shop All — ${store.name}`;
 const description =
-  "Browse the full Atelier Nord collection: silk dresses, linen shirting, wool tailoring, leather footwear and accessories. Filter by category, price, sale and stock.";
+  "Browse the full Lumina Jewelry collection: gold vermeil, sterling silver, beaded stone, leather and charm bracelets. Filter by category, price, sale and stock.";
 
 export const Route = createFileRoute("/shop/")({
   head: () => ({
@@ -22,7 +22,7 @@ function ShopAll() {
   return (
     <ShopView
       title="The full collection"
-      subtitle="Every piece in the studio, from silk slips to shearling-season coats. Filter to narrow things down, then order the piece you want straight over WhatsApp."
+      subtitle="Every bracelet in the studio, from gold bangles to onyx bead stacks. Filter to narrow things down, then order the piece you want straight over WhatsApp."
     />
   );
 }
